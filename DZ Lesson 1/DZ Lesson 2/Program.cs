@@ -29,6 +29,7 @@ namespace DZ_Lesson_2
             Console.WriteLine("2. Запросить у пользователя порядковый номер текущего месяца и вывести его название.");
             Console.WriteLine("3. Определить, является ли введённое пользователем число чётным.");
             Console.WriteLine("4. Вывести чек в кансоли");
+            Console.WriteLine("5. График работы офиса");
             Console.WriteLine("6. Выход");
             Console.Write("Введите номер задачи: ");
             int tasknam = Convert.ToInt32(Console.ReadLine());
@@ -248,40 +249,14 @@ namespace DZ_Lesson_2
                     /*(*) Для полного закрепления битовых масок, попытайтесь создать универсальную структуру расписания недели, 
                         к примеру, чтобы описать работу какого либо офиса. Явный пример -офис номер 1 работает со вторника 
                         до пятницы, офис номер 2 работает с понедельника до воскресенья и выведите его на экран консоли. */
-
-                    // Маски графиков
-                    Knowledges schedule1 = Knowledges.Понедельник | Knowledges.Вторник | Knowledges.Среда | Knowledges.Четрерг;
-                    Knowledges schedule2 = Knowledges.Пятница | Knowledges.Суббота | Knowledges.Воскресенье;
-                    Knowledges schedule3 = Knowledges.Понедельник | Knowledges.Вторник | Knowledges.Среда | Knowledges.Четрерг | Knowledges.Пятница | Knowledges.Суббота | Knowledges.Воскресенье;
-
-                    //Знания студента в числовой записи
-                    Knowledges office1 = (Knowledges)0b011011;
-
-                    // Те навыки из каждой профессии, которые присутствуют у студента:
-                    Knowledges schedule1Knowledges = office1 & schedule1;
-                    Knowledges schedule2Knowledges = office1 & schedule2;
-                    Knowledges schedule3Knowledges = office1 & schedule3;
-
-                    bool isschedule1 = schedule1Knowledges == office1;
-                    bool isschedule2 = schedule2Knowledges == office1;
-                    bool isschedule3 = schedule3Knowledges == office1;
-
-                    Console.WriteLine($"Пожилания офиса: {office1}");
-
-                    if (isschedule1)
-                    {
-                        Console.WriteLine("Студент может стать backend-разработчиком");
-                    }
-
-                    if (isschedule2)
-                    {
-                        Console.WriteLine("Студент может стать frontend-разработчиком");
-                    }
-
-                    if (isschedule3)
-                    {
-                        Console.WriteLine("Студент может стать дизайнером");
-                    }
+                    Console.Title = "График работы офиса";
+                    Console.WriteLine("График работы офиса");
+                    Knowledges office1 = (Knowledges)0b0011011;
+                    Knowledges office2 = (Knowledges)0b1100011;
+                    Knowledges office3 = (Knowledges)0b0111110;
+                    Console.WriteLine($"Первый офис работает по графику: {office1}");
+                    Console.WriteLine($"Второй офис работает по графику: {office2}");
+                    Console.WriteLine($"Третий офис работает по графику: {office3}");
                     Console.ReadLine();
 
                     break;
