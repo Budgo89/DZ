@@ -113,7 +113,7 @@ namespace DZ_Lesson_2
                             Console.WriteLine("Июнь");
                             if (sr2 >= 1 && sr2 <= 15) Console.WriteLine("Холодное лето");
                             else if (sr2 > 15) Console.WriteLine("Лето");
-                            else if (sr2 <= 0 && sr2 > -15) Console.WriteLine("Вы уверены что у Вас весна?");
+                            else if (sr2 <= 0 && sr2 > -15) Console.WriteLine("Вы уверены что у Вас лето?");
                             else Console.WriteLine("Вы из за полярного круга?");
                             break;
                         case 7:
@@ -121,7 +121,7 @@ namespace DZ_Lesson_2
                             Console.WriteLine("Июль");
                             if (sr2 >= 1 && sr2 <= 15) Console.WriteLine("Холодное лето");
                             else if (sr2 > 15) Console.WriteLine("Лето");
-                            else if (sr2 <= 0 && sr2 > -15) Console.WriteLine("Вы уверены что у Вас весна?");
+                            else if (sr2 <= 0 && sr2 > -15) Console.WriteLine("Вы уверены что у Вас лето?");
                             else Console.WriteLine("Вы из за полярного круга?");
                             break;
                         case 8:
@@ -129,7 +129,7 @@ namespace DZ_Lesson_2
                             Console.WriteLine("Август");
                             if (sr2 >= 1 && sr2 <= 15) Console.WriteLine("Холодное лето");
                             else if (sr2 > 15) Console.WriteLine("Лето");
-                            else if (sr2 <= 0 && sr2 > -15) Console.WriteLine("Вы уверены что у Вас весна?");
+                            else if (sr2 <= 0 && sr2 > -15) Console.WriteLine("Вы уверены что у Вас лето?");
                             else Console.WriteLine("Вы из за полярного круга?");
                             break;
                         case 9:
@@ -244,6 +244,7 @@ namespace DZ_Lesson_2
 
                     break;
                 #endregion
+
                 #region task 5
                 case 5:
                     /*(*) Для полного закрепления битовых масок, попытайтесь создать универсальную структуру расписания недели, 
