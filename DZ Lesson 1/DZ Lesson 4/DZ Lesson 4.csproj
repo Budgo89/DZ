@@ -7,7 +7,7 @@
     <ProjectGuid>{B0BEC8C1-120B-41B3-B15D-992D8AC08482}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>DZ_Lesson_4</RootNamespace>
-    <AssemblyName>DZ_Lesson_4</AssemblyName>
+    <AssemblyName>DZ Lesson 4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
