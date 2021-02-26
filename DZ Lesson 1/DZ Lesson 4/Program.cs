@@ -14,10 +14,9 @@ namespace DZ_Lesson_4
             Console.WriteLine("Какое задание вы хотите проверить:");
             Console.WriteLine("1. Написать метод GetFullName.");
             Console.WriteLine("2. Написать программу, принимающую на вход строку — набор чисел ");
-            Console.WriteLine("3. ");
-            Console.WriteLine("4. ");
-            Console.WriteLine("5. ");
-            Console.WriteLine("6. Выход");
+            Console.WriteLine("3. Написать метод по определению времени года");
+            Console.WriteLine("4. Число Фибоначчи");
+            Console.WriteLine("5. Выход");
             Console.Write("Введите номер задачи: ");
             int tasknam = Convert.ToInt32(Console.ReadLine());
             switch (tasknam)
@@ -45,7 +44,7 @@ namespace DZ_Lesson_4
                 case 2: /* 2. Написать программу, принимающую на вход строку — набор чисел, разделенных пробелом, 
                          * и возвращающую число — сумму всех чисел в строке. Ввести данные с клавиатуры и вывести результат на экран.*/
                     Console.Clear();
-                    Console.Title = "Меню";
+                    Console.Title = "Написать программу, принимающую на вход строку — набор чисел";
                     Console.WriteLine("2. Написать программу, принимающую на вход строку — набор чисел.");
                     Console.Write("Введете числа разделенные пробелом но не балее 99: ");
                     string sumString = Console.ReadLine();
@@ -85,43 +84,74 @@ namespace DZ_Lesson_4
                          * Используя эти методы, ввести с клавиатуры номер месяца и вывести название времени года. 
                          * Если введено некорректное число, вывести в консоль текст «Ошибка: введите число от 1 до 12».*/
 
-                    Console.Write("Введите номер месяца: ");
+                    Console.Clear();
+                    Console.Title = "Написать метод по определению времени года";
 
-                    int a3 = Convert.ToInt32(Console.ReadLine());
-                    if (a3 > 0 && a3 < 13)
+                    int i3 = 0;
+                    int a3=0;
+                    do
                     {
-
+                        Console.Write("Введите номер месяца: ");
+                        a3 = Convert.ToInt32(Console.ReadLine());
+                        i3 = SeasonScan(a3);
                     }
-                    else Console.WriteLine("Ошибка: введите число от 1 до 12");
+                    while (a3 < 1 || a3 > 12);
+                    Console.WriteLine($"{(Season)i3}");
+                    Console.ReadLine();
+                    break;
+                #endregion
+
+                #region task 4
+                case 4: // 4. (*) Написать программу, вычисляющую число Фибоначчи для заданного значения рекурсивным способом.
+
+                    Console.Clear();
+                    Console.Title = "Число Фибоначчи";
+                    Console.Write("Введите число: ");
+                    int a4 = Convert.ToInt32(Console.ReadLine());
                     
-
-
-                    var b = (Season)i3;
-                    Console.WriteLine(b);  // output: Summer
-
-                    var c = (Season)4;
-
-
-
+                    Console.WriteLine($"{Fib(a4)}");
                     Console.ReadLine();
                     break;
                     #endregion
+
+
+
+
+
 
             }
         }
         static string GetFullName(string firstName, string lastName, string patronymic)
         {
             return firstName + " " + lastName + " " + patronymic;
+        }
+
+        static int SeasonScan(int a)
+        {
+
+            if ((a > 0 && a < 3) || a == 12) return 0;
+            else if (a > 2 && a < 6) return 1;
+            else if (a > 5 && a < 9) return 2;
+            else if (a > 8 && a < 12) return 3;
+            else Console.WriteLine("Ошибка: введите число от 1 до 12");
+            return 0;
 
         }
 
+        static int Fib(int n)
+        {
+            if (n <= 1) return n;
+            int FibNum = Fib(n - 2) + Fib(n - 1);
+            return FibNum;
+        }
+
+
         public enum Season
         {
-            Winter,
-            Spring,
-            Summer,
-            Autumn,
-
+            Зима,
+            Весна,
+            Лето,
+            Осень,
         }
 
     }
