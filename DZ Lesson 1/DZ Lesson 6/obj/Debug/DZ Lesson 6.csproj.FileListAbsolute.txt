@@ -1,0 +1,7 @@
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\DZ Lesson 6.exe.config
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\DZ Lesson 6.exe
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\DZ Lesson 6.pdb
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.csprojAssemblyReference.cache
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.csproj.CoreCompileInputs.cache
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.exe
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.pdb
