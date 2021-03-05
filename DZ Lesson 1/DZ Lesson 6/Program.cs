@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -79,11 +80,30 @@ namespace DZ_Lesson_6
                     }
                     File.AppendAllLines(filename1, entries);                    
                     Console.ReadKey();
+                    break;
+                #endregion
 
+                #region task 2
+                case 2:
+                   /* 2.Список задач(ToDo - list):
+                    написать приложение для ввода списка задач;
+                    задачу описать классом ToDo с полями Title и IsDone;
+                    на старте, если есть файл tasks.json / xml / bin(выбрать формат), загрузить из него массив имеющихся задач и вывести их на экран;
+                    если задача выполнена, вывести перед её названием строку «[x]»;
+                    вывести порядковый номер для каждой задачи;
+                    при вводе пользователем порядкового номера задачи отметить задачу с этим порядковым номером как выполненную;
+                    записать актуальный массив задач в файл tasks.json / xml / bin.*/
 
+                    ToDo ToDoList = new ToDo();
+
+                    ToDoList.Title = "Задание 1 ";
+                    ToDoList.IsDone = true;
+                    string json = JsonSerializer.Serialize(ToDoList);
+                    File.WriteAllText("ToDoList.json", json);
 
                     break;
                     #endregion
+
             }
         }
     }
