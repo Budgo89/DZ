@@ -1,0 +1,40 @@
+05.03.2021 17:37:48
+└─Battle.net
+  ├─Battle.net.12685
+  │ ├─audio
+  │ ├─imageformats
+  │ ├─locales
+  │ ├─platforms
+  │ ├─qml
+  │ │ ├─QtGraphicalEffects
+  │ │ │ └─private
+  │ │ ├─QtQml
+  │ │ │ ├─Models.2
+  │ │ │ └─StateMachine
+  │ │ ├─QtQuick
+  │ │ │ ├─Controls
+  │ │ │ ├─Controls.2
+  │ │ │ ├─Layouts
+  │ │ │ ├─Templates.2
+  │ │ │ └─Window.2
+  │ │ └─QtQuick.2
+  │ └─swiftshader
+  └─Battle.net.12712
+    ├─audio
+    ├─imageformats
+    ├─locales
+    ├─platforms
+    ├─qml
+    │ ├─QtGraphicalEffects
+    │ │ └─private
+    │ ├─QtQml
+    │ │ ├─Models.2
+    │ │ └─StateMachine
+    │ ├─QtQuick
+    │ │ ├─Controls
+    │ │ ├─Controls.2
+    │ │ ├─Layouts
+    │ │ ├─Templates.2
+    │ │ └─Window.2
+    │ └─QtQuick.2
+    └─swiftshader

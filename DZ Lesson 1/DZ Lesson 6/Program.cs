@@ -9,38 +9,47 @@ namespace DZ_Lesson_6
 {
     class Program
     {
-        static void PrintDir(DirectoryInfo dir, string indent, bool lastDirectory)
+        static void PrintDir(DirectoryInfo dir, string indent, bool lastDirectory, string fail)
         {
+            string text;
             Console.Write(indent);
+            File.AppendAllText(fail, indent);
             if (lastDirectory)
             {
                 Console.Write("└─");
+                text = "└─";
+                File.AppendAllText(fail, text);
                 indent += "  ";
+                                
             }
             else
             {
                 Console.Write("├─");
-                indent += "│ ";
+                text = "├─";
+                File.AppendAllText(fail, text);
+                indent += "│ ";                              
             }
 
             Console.WriteLine(dir.Name);
+            File.AppendAllText(fail, dir.Name);
+            File.AppendAllText(fail, Environment.NewLine);
 
             DirectoryInfo[] subDirs = dir.GetDirectories();
 
             for (int i = 0; i < subDirs.Length; i++)
             {
-                PrintDir(subDirs[i], indent, i == subDirs.Length - 1);
+                PrintDir(subDirs[i], indent, i == subDirs.Length - 1, fail);
             }
-
         }
+
         static void Main(string[] args)
         {
             Console.Title = "Меню";
             Console.WriteLine("Какое задание вы хотите проверить:");
             Console.WriteLine("1. Сохранить дерево каталогов и файлов.");
-            Console.WriteLine("2. Написать программу, принимающую на вход строку — набор чисел ");
-            Console.WriteLine("3. Написать метод по определению времени года");
-            Console.WriteLine("4. Число Фибоначчи");
+            Console.WriteLine("2. ");
+            Console.WriteLine("3. ");
+            Console.WriteLine("4. ");
             Console.WriteLine("5. Выход");
             Console.Write("Введите номер задачи: ");
             int tasknam = Convert.ToInt32(Console.ReadLine());
@@ -48,11 +57,27 @@ namespace DZ_Lesson_6
             {
                 #region task 1
                 case 1: // 1. Сохранить дерево каталогов и файлов по заданному пути в текстовый файл — с рекурсией и без.
+                    Console.Clear();
+                    Console.Title = "Сохранить дерево каталогов и файлов";
+                    string put = @"E:\Battle.net";
+                    string filename1 = "strukturDir.txt";
+                    DateTime localDate = DateTime.Now;
+                    File.WriteAllText(filename1, Convert.ToString(localDate));
+                    File.AppendAllText(filename1, Environment.NewLine);
+                    PrintDir(new DirectoryInfo(put), "", true, filename1);
+                    Console.ReadKey();
 
-                    string put = AppDomain.CurrentDomain.BaseDirectory + "DZ Lesson 1.sln";
+                    filename1 = "strukturDir1.txt";
+                    File.WriteAllText(filename1, Convert.ToString(localDate));
+                    File.AppendAllText(filename1, Environment.NewLine);
 
-                    PrintDir(new DirectoryInfo(put), "", true);
+                    string[] entries = Directory.GetFileSystemEntries(put, "*", SearchOption.AllDirectories);
 
+                    for (int i = 0; i < entries.Length; i++)
+                    {
+                        Console.WriteLine(entries[i]);
+                    }
+                    File.AppendAllLines(filename1, entries);                    
                     Console.ReadKey();
 
 
