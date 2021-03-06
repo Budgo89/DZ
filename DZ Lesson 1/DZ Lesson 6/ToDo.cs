@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DZ_Lesson_6
 {
-    class ToDo
+    [Serializable]
+    public class ToDo
     {
         public string Title { get; set; }
         public bool IsDone { get; set; }
@@ -14,6 +15,12 @@ namespace DZ_Lesson_6
         {
         }
 
+
+        public void print()
+        {
+            Console.Write($"{Title}: ");
+            Console.WriteLine(IsDone);
+        }
 
     }
 }

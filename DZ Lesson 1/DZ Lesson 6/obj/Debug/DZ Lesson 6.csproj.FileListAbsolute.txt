@@ -5,3 +5,15 @@ D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Les
 D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.csproj.CoreCompileInputs.cache
 D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.exe
 D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.pdb
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\Newtonsoft.Json.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\Newtonsoft.Json.xml
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.csproj.CopyComplete
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Text.Json.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Memory.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Text.Encodings.Web.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Numerics.Vectors.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Buffers.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 6\obj\Debug\DZ Lesson 6.exe.config

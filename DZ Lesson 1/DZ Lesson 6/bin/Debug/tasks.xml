@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ToDo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Title>Задание 1 </Title>
+  <IsDone>true</IsDone>
+</ToDo><?xml version="1.0" encoding="utf-16"?>
+<ToDo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Title>Задание 2 </Title>
+  <IsDone>true</IsDone>
+</ToDo><?xml version="1.0" encoding="utf-16"?>
+<ToDo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Title>Задание 3 </Title>
+  <IsDone>true</IsDone>
+</ToDo><?xml version="1.0" encoding="utf-16"?>
+<ToDo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Title>Задание 4 </Title>
+  <IsDone>false</IsDone>
+</ToDo>
