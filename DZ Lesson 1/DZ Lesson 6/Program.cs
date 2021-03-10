@@ -58,7 +58,7 @@ namespace DZ_Lesson_6
             Console.WriteLine("1. Сохранить дерево каталогов и файлов.");
             Console.WriteLine("2. Список задач(ToDo - list).");
             Console.WriteLine("3. Напишите метод, на вход которого подаётся двумерный строковый массив размером 4х4.");
-            Console.WriteLine("4. ");
+            Console.WriteLine("4. Создать класс Сотрудник с полями");
             Console.WriteLine("5. Выход");
             Console.Write("Введите номер задачи: ");
             int tasknam = Convert.ToInt32(Console.ReadLine());
