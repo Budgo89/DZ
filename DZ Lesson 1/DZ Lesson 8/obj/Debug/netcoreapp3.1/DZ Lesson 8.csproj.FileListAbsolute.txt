@@ -1,0 +1,13 @@
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\bin\Debug\netcoreapp3.1\DZ Lesson 8.exe
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\bin\Debug\netcoreapp3.1\DZ Lesson 8.deps.json
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\bin\Debug\netcoreapp3.1\DZ Lesson 8.runtimeconfig.json
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\bin\Debug\netcoreapp3.1\DZ Lesson 8.runtimeconfig.dev.json
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\bin\Debug\netcoreapp3.1\DZ Lesson 8.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\bin\Debug\netcoreapp3.1\DZ Lesson 8.pdb
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.csprojAssemblyReference.cache
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.AssemblyInfoInputs.cache
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.AssemblyInfo.cs
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.csproj.CoreCompileInputs.cache
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.dll
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.pdb
+D:\Програмирование\C#\DZ\DZ Lesson 1\DZ Lesson 8\obj\Debug\netcoreapp3.1\DZ Lesson 8.genruntimeconfig.cache

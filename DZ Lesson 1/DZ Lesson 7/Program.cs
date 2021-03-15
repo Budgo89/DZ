@@ -34,7 +34,7 @@ namespace DZ_Lesson_7
         private static void PrintField()
         {
             Console.Clear();
-            Console.WriteLine("-------");
+            Console.WriteLine("-----------");
             for (int i = 0; i < SIZE_Y; i++)
             {
                 Console.Write("|");
@@ -44,7 +44,7 @@ namespace DZ_Lesson_7
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("-------");
+            Console.WriteLine("-----------");
         }
 
         private static void SetSym(int y, int x, char sym)
@@ -84,55 +84,231 @@ namespace DZ_Lesson_7
             do
             {
                 Console.WriteLine($"Введите координаты X Y (1-{SIZE_X})");
+                Console.WriteLine("Координата по горизонтале");
                 x = Int32.Parse(Console.ReadLine()) - 1;
+                Console.WriteLine("Координат по вертикали ");
                 y = Int32.Parse(Console.ReadLine()) - 1;
             } while (!IsCellValid(y, x));
             SetSym(y, x, PLAYER_DOT);
         }
-
+        //Ход ИИ
         private static void AiStep()
         {
             int x;
             int y;
-            do
+            for (int i = 0; i < SIZE_Y; i++) //v
             {
-                x = random.Next(0, SIZE_X);
-                y = random.Next(0, SIZE_Y);
-            } while (!IsCellValid(y, x));
-            SetSym(y, x, AI_DOT);
-        }
+                for (int j = 0; j < SIZE_X; j++)  //h
+                {
+                    //анализ наличие поля для проверки
+                    //по горизонтале
+                    if (h + SIZE <= SIZE_X)
+                    {
+                        if (CheckLineHorisont(i, j, PLAYER_DOT) == SIZE - 1)
+                        {
+                            if (MoveAiLineHorisont(i, j, AI_DOT)) return;
+                        }
+                        //вверх по диагонале
+                        if (i - SIZE > -2)
+                        {
+                            if (CheckDiaUp(i, j, PLAYER_DOT) == SIZE - 1)
+                            {
+                                if (MoveAiDiaUp(i, j, AI_DOT)) return;
+                            }
+                        }
+                        //вниз по диагонале
+                        if (i + SIZE <= SIZE_Y)
+                        {
+                            if (CheckDiaDown(i, j, PLAYER_DOT) == SIZE - 1)
+                            {
+                                if (MoveAiDiaDown(i, j, AI_DOT)) return;
+                            }
+                        }
+                    }
+                    //по вертикале
+                    if (i + SIZE <= SIZE_Y)
+                    {
+                        if (CheckLineVertical(i, j, PLAYER_DOT) == SIZE - 1)
+                        {
+                            if (MoveAiLineVertical(i, j, AI_DOT)) return;
+                        }
+                    }
+                }
+            }
+                //игра на победу
+                for (int i = 0; i < SIZE_Y; i++)
+                {
+                    for (int j = 0; j < SIZE_X; j++)
+                    {
+                        //анализ наличие поля для проверки
+                        //по горизонтале
+                        if (j + SIZE <= SIZE_X)
+                        {
+                            if (CheckLineHorisont(i, j, AI_DOT) == SIZE - 1)
+                            {
+                                if (MoveAiLineHorisont(i, j, AI_DOT)) return;
+                            }
+                            //вверх по диагонале
+                            if (i - SIZE > -2)
+                            {
+                                if (CheckDiaUp(i, j, AI_DOT) == SIZE - 1)
+                                {
+                                    if (MoveAiDiaUp(i, j, AI_DOT)) return;
+                                }
+                            }
+                            //вниз по диагонале
+                            if (i + SIZE <= SIZE_Y)
+                            {
+                                if (CheckDiaDown(i, j, AI_DOT) == SIZE - 1)
+                                {
+                                    if (MoveAiDiaDown(i, j, AI_DOT)) return;
+                                }
+                            }
 
-        private static bool CheckWin(char sym)
+                        }
+                        //по вертикале
+                        if (i + SIZE <= SIZE_Y)
+                        {
+                            if (CheckLineVertical(i, j, AI_DOT) == SIZE - 1)
+                            {
+                                if (MoveAiLineVertical(i, j, AI_DOT)) return;
+                            }
+                        }
+                    }
+                }
+
+
+                do
+                {
+                    x = random.Next(0, SIZE_X);
+                    y = random.Next(0, SIZE_Y);
+                } while (!IsCellValid(y, x));
+                SetSym(y, x, AI_DOT);
+            
+        }
+        //ход компьютера по горизонтале
+        private static bool MoveAiLineHorisont(int v, int h, char dot)
         {
-            for (int i = 0; i < field.GetLength(0); i++)
+            for (int j = h; j < SIZE; j++)
             {
-                for (int j = 0; j < field.GetLength(1)- SIZE; j++)
+                if ((field[v, j] == EMPTY_DOT))
                 {
-                    if (field[i, j] == sym && field[i, j+1] == sym && field[i, j+2] == sym && field[i, j+3] == sym) return true;
-                }
-            }
-            for (int i = 0; i < field.GetLength(0)- SIZE; i++)
-            {
-                for (int j = 0; j < field.GetLength(1); j++)
-                {
-                    if (field[i, j] == sym && field[i + 1, j] == sym && field[i + 2, j] == sym && field[i + 3, j] == sym) return true;
-                }
-            }
-            for (int i = 0; i < field.GetLength(0) - SIZE-1; i++)
-            {
-                for (int j = 0; j < field.GetLength(1) - SIZE-1; j++)
-                {
-                    if (field[i, j] == sym && field[i + 1, j+1] == sym && field[i + 2, j+2] == sym && field[i + 3, j+3] == sym) return true;
-                }
-            }
-            for (int i = 0; i < field.GetLength(0) - SIZE-1; i++)
-            {
-                for (int j = field.GetLength(1)-1; j >= SIZE-1; j--)
-                {
-                    if (field[i, j] == sym && field[i + 1, j - 1] == sym && field[i + 2, j - 2] == sym && field[i + 3, j - 3] == sym) return true;
+                    field[v, j] = dot;
+                    return true;
                 }
             }
             return false;
+        }
+        //ход компьютера по вертикале
+        private static bool MoveAiLineVertical(int v, int h, char dot)
+        {
+            for (int i = v; i < SIZE; i++)
+            {
+                if ((field[i, h] == EMPTY_DOT))
+                {
+                    field[i, h] = dot;
+                    return true;
+                }
+            }
+            return false;
+        }
+        //проверка заполнения всей линии по диагонале вверх
+
+        private static bool MoveAiDiaUp(int v, int h, char dot)
+        {
+            for (int i = 0, j = 0; j < SIZE; i--, j++)
+            {
+                if ((field[v + i, h + j] == EMPTY_DOT))
+                {
+                    field[v + i, h + j] = dot;
+                    return true;
+                }
+            }
+            return false;
+        }
+        //проверка заполнения всей линии по диагонале вниз
+
+        private static bool MoveAiDiaDown(int v, int h, char dot)
+        {
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                if ((field[i + v, i + h] == EMPTY_DOT))
+                {
+                    field[i + v, i + h] = dot;
+                    return true;
+                }
+            }
+            return false;
+        }
+        //проверка победы
+        private static bool CheckWin(char dot)
+        {
+            for (int i = 0; i < SIZE_Y; i++)
+            {
+                for (int j = 0; j < SIZE_X; j++)
+                {
+                    //анализ наличие поля для проверки
+                    //по горизонтале
+                    if (j + SIZE <= SIZE_X)
+                    {                           
+                        if (CheckLineHorisont(i, j, dot) >= SIZE) return true;
+                        //вверх по диагонале
+                        if (i - SIZE > -2)                                                    
+                            if (CheckDiaUp(i, j, dot) >= SIZE) return true;
+                        
+                        //вниз по диагонале
+                        if (i + SIZE <= SIZE_Y)
+                            if (CheckDiaDown(i, j, dot) >= SIZE) return true; 
+                    }
+                    //по вертикале
+                    if (i + SIZE <= SIZE_Y)
+                        if (CheckLineVertical(i, j, dot) >= SIZE) return true;
+                }
+            }
+            return false;
+        }
+        //проверка заполнения всей линии по диагонале вверх
+
+        private static int CheckDiaUp(int v, int h, char dot)
+        {
+            int count = 0;
+            for (int i = 0, j = 0; j < SIZE; i--, j++)
+            {
+                if ((field[v + i, h + j] == dot)) count++;
+            }
+            return count;
+        }
+        //проверка заполнения всей линии по диагонале вниз
+
+        private static int CheckDiaDown(int v, int h, char dot)
+        {
+            int count = 0;
+            for (int i = 0; i < SIZE; i++)
+            {
+                if ((field[i + v, i + h] == dot)) count++;
+            }
+            return count;
+        }
+
+        private static int CheckLineHorisont(int v, int h, char dot)
+        {
+            int count = 0;
+            for (int j = h; j < SIZE + h; j++)
+            {
+                if ((field[v, j] == dot)) count++;
+            }
+            return count;
+        }
+        //проверка заполнения всей линии по вертикале
+        private static int CheckLineVertical(int v, int h, char dot)
+        {
+            int count = 0;
+            for (int i = v; i < SIZE + v; i++)
+            {
+                if ((field[i, h] == dot)) count++;
+            }
+            return count;
         }
 
         static void Main(string[] args)
